@@ -17,7 +17,6 @@ import com.varabyte.kobweb.compose.ui.modifiers.borderRadius
 import com.varabyte.kobweb.compose.ui.modifiers.boxShadow
 import com.varabyte.kobweb.compose.ui.modifiers.color
 import com.varabyte.kobweb.compose.ui.modifiers.cursor
-import com.varabyte.kobweb.compose.ui.modifiers.fillMaxSize
 import com.varabyte.kobweb.compose.ui.modifiers.margin
 import com.varabyte.kobweb.compose.ui.modifiers.onClick
 import com.varabyte.kobweb.compose.ui.modifiers.opacity
@@ -28,12 +27,18 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.px
+import org.reshape.reshapeapp.modifier.fillWidthUntilPadding
 
 @Page
 @Composable
+@Suppress("UNUSED")
 fun HomePage() {
     Column(
-        modifier = Modifier.fillMaxSize().backgroundColor(Colors.White),
+        modifier = Modifier
+            .margin(20.px)
+            .fillWidthUntilPadding(20.px)
+            .borderRadius(20.px)
+            .backgroundColor(Colors.White),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -47,7 +52,12 @@ fun HomePage() {
             Modifier
                 .borderRadius(12.px)
                 .backgroundColor(Colors.White)
-                .boxShadow(5.px, 5.px, blurRadius = 5.px, color = Colors.Black.copy(alpha = 100))
+                .boxShadow(
+                    5.px,
+                    5.px,
+                    blurRadius = 5.px,
+                    color = Colors.Black.copy(alpha = 100)
+                )
                 .padding(left = 20.px, right = 20.px)
                 .onClick {
                     imageVisible = !imageVisible

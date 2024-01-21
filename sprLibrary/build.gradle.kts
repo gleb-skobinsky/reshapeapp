@@ -1,4 +1,3 @@
-import com.varabyte.kobweb.gradle.library.util.configAsKobwebLibrary
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.compose.desktop.application.tasks.AbstractJLinkTask
@@ -7,11 +6,13 @@ plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
-    alias(libs.plugins.kobweb.library)
 }
 
 kotlin {
-    configAsKobwebLibrary(false, jsTargetName = "js", jvmTargetName = "jvmMain")
+    js(IR) {
+        browser()
+        binaries.executable()
+    }
 
     androidTarget {
         compilations.all {

@@ -1,12 +1,13 @@
 [versions]
 jetbrains-compose = "1.5.11"
-kobweb = "0.15.3"
+kobweb = "0.15.4"
 kotlin = "1.9.21"
 agp = "8.1.4"
 android-compileSdk = "34"
 android-minSdk = "24"
 android-targetSdk = "34"
 compose = "1.5.4"
+androidx-activityCompose = "1.8.2"
 
 [libraries]
 kobweb-api = { module = "com.varabyte.kobweb:kobweb-api", version.ref = "kobweb" }
@@ -17,6 +18,10 @@ silk-foundation = { module = "com.varabyte.kobweb:silk-foundation", version.ref 
 silk-icons-fa = { module = "com.varabyte.kobwebx:silk-icons-fa", version.ref = "kobweb" }
 silk-icons-mdi = { module = "com.varabyte.kobwebx:silk-icons-mdi", version.ref = "kobweb" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+kobweb-compose = { module = "com.varabyte.kobweb:kobweb-compose", version.ref = "kobweb" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+
 
 [plugins]
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "jetbrains-compose" }

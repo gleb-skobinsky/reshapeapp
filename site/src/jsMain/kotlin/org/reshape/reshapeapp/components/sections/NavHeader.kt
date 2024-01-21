@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp.components.sections
+package org.reshape.shapeshifter.components.sections
 
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.compose.css.functions.clamp
@@ -32,8 +32,8 @@ import com.varabyte.kobweb.silk.components.style.breakpoint.Breakpoint
 import com.varabyte.kobweb.silk.components.style.toModifier
 import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import org.jetbrains.compose.web.css.*
-import org.reshape.reshapeapp.components.widgets.IconButton
-import org.reshape.reshapeapp.toSitePalette
+import org.reshape.shapeshifter.components.widgets.IconButton
+import org.reshape.shapeshifter.toSitePalette
 
 val NavHeaderStyle by ComponentStyle.base {
     Modifier.fillMaxWidth().padding(1.cssRem)

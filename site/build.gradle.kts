@@ -7,7 +7,7 @@ plugins {
     alias(libs.plugins.kobwebx.markdown)
 }
 
-group = "org.reshape.reshapeapp"
+group = "org.reshape.shapeshifter"
 version = "1.0-SNAPSHOT"
 
 kobweb {
@@ -21,7 +21,8 @@ kobweb {
 kotlin {
     // This example is frontend only. However, for a fullstack app, you can uncomment the includeServer parameter
     // and the `jvmMain` source set below.
-    configAsKobwebApplication("reshapeapp" /*, includeServer = true*/)
+    configAsKobwebApplication("shapeshifter" /*, includeServer = true*/)
+
 
     sourceSets {
         val commonMain by getting {

@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp.components.layouts
+package org.reshape.shapeshifter.components.layouts
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.css.FontWeight
@@ -16,7 +16,7 @@ import org.jetbrains.compose.web.css.DisplayStyle
 import org.jetbrains.compose.web.css.LineStyle
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.px
-import org.reshape.reshapeapp.toSitePalette
+import org.reshape.shapeshifter.toSitePalette
 
 val MarkdownStyle by ComponentStyle {
     // The following rules apply to all descendant elements, indicated by the leading space.

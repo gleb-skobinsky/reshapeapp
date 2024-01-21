@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp.components.layouts
+package org.reshape.shapeshifter.components.layouts
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -18,9 +18,9 @@ import kotlinx.browser.document
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.css.fr
 import org.jetbrains.compose.web.css.percent
-import org.reshape.reshapeapp.components.sections.Footer
-import org.reshape.reshapeapp.components.sections.NavHeader
-import org.reshape.reshapeapp.toSitePalette
+import org.reshape.shapeshifter.components.sections.Footer
+import org.reshape.shapeshifter.components.sections.NavHeader
+import org.reshape.shapeshifter.toSitePalette
 
 val PageContentStyle by ComponentStyle {
     base { Modifier.fillMaxSize().padding(leftRight = 2.cssRem, top = 4.cssRem) }

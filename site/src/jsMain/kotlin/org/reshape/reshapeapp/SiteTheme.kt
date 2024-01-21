@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp
+package org.reshape.shapeshifter
 
 import com.varabyte.kobweb.compose.ui.graphics.Color
 import com.varabyte.kobweb.compose.ui.graphics.Colors

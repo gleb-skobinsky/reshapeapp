@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp
+package org.reshape.shapeshifter
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -16,7 +16,7 @@ import com.varabyte.kobweb.silk.theme.colors.ColorMode
 import kotlinx.browser.localStorage
 import org.jetbrains.compose.web.css.vh
 
-private const val COLOR_MODE_KEY = "reshapeapp:colorMode"
+private const val COLOR_MODE_KEY = "shapeshifter:colorMode"
 
 @InitSilk
 fun initColorMode(ctx: InitSilkContext) {

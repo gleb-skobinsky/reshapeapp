@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp.modifier
+package org.reshape.shapeshifter.modifier
 
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.styleModifier

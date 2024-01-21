@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp
+package org.reshape.shapeshifter
 
 import com.varabyte.kobweb.compose.css.TextAlign
 import com.varabyte.kobweb.compose.ui.Modifier

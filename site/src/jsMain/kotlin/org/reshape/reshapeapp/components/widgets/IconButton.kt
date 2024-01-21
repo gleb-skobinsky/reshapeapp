@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp.components.widgets
+package org.reshape.shapeshifter.components.widgets
 
 import androidx.compose.runtime.Composable
 import com.varabyte.kobweb.compose.ui.Modifier
@@ -6,8 +6,8 @@ import com.varabyte.kobweb.compose.ui.modifiers.setVariable
 import com.varabyte.kobweb.silk.components.forms.Button
 import com.varabyte.kobweb.silk.components.forms.ButtonVars
 import org.jetbrains.compose.web.css.em
-import org.reshape.reshapeapp.CircleButtonVariant
-import org.reshape.reshapeapp.UncoloredButtonVariant
+import org.reshape.shapeshifter.CircleButtonVariant
+import org.reshape.shapeshifter.UncoloredButtonVariant
 
 @Composable
 fun IconButton(onClick: () -> Unit, content: @Composable () -> Unit) {

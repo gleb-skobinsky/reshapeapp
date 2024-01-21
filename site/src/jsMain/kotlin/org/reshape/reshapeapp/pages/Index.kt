@@ -1,4 +1,4 @@
-package org.reshape.reshapeapp.pages
+package org.reshape.shapeshifter.pages
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -27,7 +27,7 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.px
-import org.reshape.reshapeapp.modifier.fillWidthUntilPadding
+import org.reshape.shapeshifter.modifier.fillWidthUntilPadding
 
 @Page
 @Composable

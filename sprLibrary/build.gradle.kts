@@ -1,5 +1,7 @@
+import com.varabyte.kobweb.gradle.library.util.configAsKobwebLibrary
 import org.jetbrains.compose.ExperimentalComposeLibrary
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.compose.desktop.application.tasks.AbstractJLinkTask
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -9,10 +11,7 @@ plugins {
 }
 
 kotlin {
-    js(IR) {
-        browser()
-        binaries.executable()
-    }
+    configAsKobwebLibrary(false, jsTargetName = "js", jvmTargetName = "jvmMain")
 
     androidTarget {
         compilations.all {
@@ -35,7 +34,6 @@ kotlin {
     }
 
     sourceSets {
-        val jsMain by getting
         val desktopMain by getting
 
         androidMain.dependencies {
@@ -49,6 +47,9 @@ kotlin {
             implementation(compose.ui)
             @OptIn(ExperimentalComposeLibrary::class)
             implementation(compose.components.resources)
+        }
+        commonTest.dependencies {
+            implementation(kotlin("test"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -106,4 +107,8 @@ compose.desktop {
 
 compose.experimental {
     web.application {}
+}
+
+tasks.withType(AbstractJLinkTask::class.java).configureEach {
+    tasks.named("kspKotlinDesktop").get().enabled = false
 }

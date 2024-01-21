@@ -20,5 +20,4 @@ dependencyResolutionManagement {
 rootProject.name = "shapeshifter"
 
 include(":site")
-include(":demoApp")
 include(":sprLibrary")

@@ -1,11 +1,16 @@
+import com.varabyte.kobweb.ProcessorMode
+import com.varabyte.kobweb.ksp.KSP_PROCESSOR_MODE_KEY
 import org.jetbrains.compose.ExperimentalComposeLibrary
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.compose.desktop.application.tasks.AbstractJLinkTask
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.compose)
+    alias(libs.plugins.kobweb.library)
+}
+
+ksp {
+    arg(KSP_PROCESSOR_MODE_KEY, ProcessorMode.LIBRARY.toString())
 }
 
 kotlin {
@@ -94,22 +99,6 @@ android {
     }
 }
 
-compose.desktop {
-    application {
-        mainClass = "MainKt"
-
-        nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "org.compose.shapeshifter.library"
-            packageVersion = "1.0.0"
-        }
-    }
-}
-
 compose.experimental {
     web.application {}
-}
-
-tasks.withType(AbstractJLinkTask::class.java).configureEach {
-    tasks.named("kspKotlinDesktop").get().enabled = false
 }

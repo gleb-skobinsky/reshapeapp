@@ -18,10 +18,12 @@ import com.varabyte.kobweb.compose.ui.modifiers.overflow
 import com.varabyte.kobweb.compose.ui.modifiers.scale
 import com.varabyte.kobweb.compose.ui.modifiers.transition
 import kotlinx.browser.document
+import kotlinx.browser.window
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.web.css.ms
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
+import org.w3c.dom.HTMLElement
 
 external fun require(module: String): dynamic
 
@@ -74,10 +76,12 @@ actual fun AnimatedVisibilitySpr(
             content()
         }
     }
-    LaunchedEffect(visible) {
-        if (visible && height == null) {
-            document.getElementById(id)?.let {
-                height = it.getBoundingClientRect().height.toInt()
+    LaunchedEffect(internalVisible) {
+        if (internalVisible && height == null) {
+            (document.getElementById(id) as? HTMLElement)?.let {
+                height = window.getComputedStyle(
+                    it
+                ).height.replace("px", "").toInt()
             }
         }
     }

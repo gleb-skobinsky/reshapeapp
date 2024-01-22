@@ -18,7 +18,7 @@ import org.compose.shapeshifter.library.fillMaxSizeSpr
 
 @Composable
 fun Example() {
-    var textVisible by remember { mutableStateOf(true) }
+    var textVisible by remember { mutableStateOf(false) }
     ColumnSpr(
         ModifierFactory().fillMaxSizeSpr().background(Color.White),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -35,6 +35,7 @@ fun Example() {
             color = Color.Magenta,
             fontSize = 48.sp,
             modifier = ModifierFactory().clickableSpr {
+                println("Click")
                 textVisible = !textVisible
             }
         )

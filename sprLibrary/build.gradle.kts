@@ -65,6 +65,7 @@ kotlin {
             implementation(libs.kobweb.compose)
             implementation(libs.kobweb.silk)
             implementation(compose.html.core)
+            implementation(npm("uuid", "9.0.1"))
         }
     }
 }

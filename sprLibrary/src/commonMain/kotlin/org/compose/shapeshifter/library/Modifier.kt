@@ -11,3 +11,5 @@ expect object ModifierFactory {
 expect fun ModifierSpr.fillMaxSizeSpr(fraction: Float = 1f): ModifierSpr
 
 expect fun ModifierSpr.background(color: Color): ModifierSpr
+
+expect fun ModifierSpr.clickableSpr(action: () -> Unit): ModifierSpr

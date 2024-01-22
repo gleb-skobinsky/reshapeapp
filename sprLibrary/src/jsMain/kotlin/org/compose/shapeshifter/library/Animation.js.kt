@@ -37,8 +37,8 @@ actual fun AnimatedVisibilitySpr(
     exit: ExitTransitionData,
     content: @Composable () -> Unit
 ) {
-    var height: Int by remember {
-        mutableStateOf(-1)
+    var height: Int? by remember {
+        mutableStateOf(null)
     }
     val id = remember {
         uuid4()
@@ -74,9 +74,11 @@ actual fun AnimatedVisibilitySpr(
             content()
         }
     }
-    LaunchedEffect(Unit) {
-        document.getElementById(id)?.let {
-            height = it.getBoundingClientRect().height.toInt()
+    LaunchedEffect(visible) {
+        if (visible && height == null) {
+            document.getElementById(id)?.let {
+                height = it.getBoundingClientRect().height.toInt()
+            }
         }
     }
 }
@@ -85,7 +87,7 @@ actual fun AnimatedVisibilitySpr(
 fun Modifier.toTransition(
     enter: EnterAnimationTypes,
     visible: Boolean,
-    height: Int
+    height: Int?
 ): Modifier {
     return when (enter) {
         is EnterAnimationTypes.ExpandIn -> {
@@ -93,20 +95,19 @@ fun Modifier.toTransition(
                 .then(
                     if (visible) {
                         when (height) {
-                            -1 -> height(Height.FitContent)
+                            null -> height(Height.FitContent)
                             else -> height(height.px)
                         }
-
                     } else height(0.px)
                 )
         }
 
         is EnterAnimationTypes.ScaleIn -> {
-            if (visible) scale(100.percent) else scale(0.percent)
+            scale(if (visible) 100.percent else 0.percent)
         }
 
         is EnterAnimationTypes.FadeIn -> {
-            if (visible) opacity(100.percent) else opacity(0.percent)
+            opacity(if (visible) 100.percent else 0.percent)
         }
     }
 
